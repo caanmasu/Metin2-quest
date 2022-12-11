@@ -77,7 +77,6 @@ WORKINGPATH_DFT="./pre_qc"
 
 Una de las ventajas de usar este pre_qc.py es que si obtienes un error al compilar, no pasará a la siguiente quest sino que se detendrá ahí y lo podremos visualizar para corregir.<br/>
 #### Nota: una quest es compilada bien cuando se compila el último bloque when o function. Aún así no hay garantía, porque hay un bug donde si pones un caracter especial en el último caracter de un say (o algún componente gráfico quest, como select), tomará como compilado ese bloque pero no compiló la quest. La solución es, si necesariamente quieres una tilde (posible caracter), entonces adiciona un espacio.<br/>
-Esto está mal:
 ```lua
 -- on any file lua
 gameforge["es"][12345] = "Texto en español. Atraerá[ENTER]a muchos latinos"
@@ -90,7 +89,8 @@ say(gameforge[pc.get_language()][12346]) #no error pero no compila
 say(gameforge[pc.get_language()][12347]) #bien
 ```
 En los ejemplos anteriores, el índice de la tabla 12345 y 12346, tienen tilde, uno antes de ```[ENTER]``` y el otro al final del texto. Ambos ocasionarán problemas.<br/>
-La solución se encuentra en el 123457. Y recuerda que en el caracter 50 hará un salto de línea, así que ten presente para la estética, cortar tus textos hasta los 49 caracteres.
+La solución se encuentra en el 123457. Y recuerda que en el caracter 50 hará un salto de línea, así que ten presente para la estética, cortar tus textos hasta los 49 caracteres.<br/>
+Los caracteres hasta donde tengo conocido, son todos los que lleven tilde o la cedilla (ç).
 
 ## 4. Prepara tu compilador qc
 
@@ -118,8 +118,12 @@ En los when donde se ponen textos no se pueden poner tablas con más de una anid
 <br/>
 Una vez puesto el qc del repo ya funcionará como debe ser.
 ## 5. Si el compilador te pide funciones, haz esto
-En otras versiones del compilador no matan el proceso cuando no detecta funciones declaradas. Pues es recomendable dejar que pida las funciones por seguridad, algunas veces el compilador me avisa de funciones que no las he creado y sí las he llamado.<br/>
+En otras versiones del compilador no matan el proceso cuando no detecta funciones declaradas. Es recomendable dejar que pida las funciones por seguridad, algunas veces el compilador me avisa de funciones que no las he creado y sí las he llamado.<br/>
 Si te pide funciones, simplemente las seleccionas en la misma consola (no hagas Ctrl+C) y las pegas en quest_functions.<br/>
 Cuando seleccionas cualquier texto en la consola, automáticamente este texto se copia.
 ## 6. Mejora la estructura de tus variables.
 Para multilenguaje, si no tienes una estructura clara, vas a perderte demasiado y gastar mucho tiempo.<br/>
+Lo primero que debes tener en cuenta es que los desarrolladores de Metin2 empezaron los textos con variables. Con el tiempo lo cambiaron a índices. La verdad ese cambio mejoró bastante la manera como se manejaban los textos. Así que siempre piensa en manejar índices.<br/>
+Todos queremos utilizar los mismos textos del servidor oficial, sobretodo para ahorrar tiempo y que quede bien traducido, entonces hay que crear una estructura que se sincronice con los índices del oficial.<br/>
+Si tienes un solo idioma, como si tienes varios, debes hacer esto:
+
