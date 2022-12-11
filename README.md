@@ -90,8 +90,9 @@ say(gameforge[pc.get_language()][12347]) #bien
 ```
 En los ejemplos anteriores, el índice de la tabla 12345 y 12346, tienen tilde, uno antes de ```[ENTER]``` y el otro al final del texto. Ambos ocasionarán problemas.<br/>
 La solución se encuentra en el 123457. Y recuerda que en el caracter 50 hará un salto de línea, así que ten presente para la estética, cortar tus textos hasta los 49 caracteres.<br/>
-Los caracteres hasta donde tengo conocido, son todos los que lleven tilde o la cedilla (ç).
-
+Los caracteres hasta donde tengo conocido, son todos los que lleven tilde o la cedilla (ç).<br/>
+<br/>
+Al compilar las quest, las carpetas ```object``` y ```pre_qc``` se eliminarán y se generarán unas nuevas.
 ## 4. Prepara tu compilador qc
 
 ```qc``` es el nombre del binario generado desde el source server en ```game/src/quest```. El lenguaje C++ llama al lua y el lua crea uno extendido que se le denominó quest, poniendo así su propia estructura y sintaxis.<br/>
