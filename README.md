@@ -125,5 +125,21 @@ Cuando seleccionas cualquier texto en la consola, automáticamente este texto se
 Para multilenguaje, si no tienes una estructura clara, vas a perderte demasiado y gastar mucho tiempo.<br/>
 Lo primero que debes tener en cuenta es que los desarrolladores de Metin2 empezaron los textos con variables. Con el tiempo lo cambiaron a índices. La verdad ese cambio mejoró bastante la manera como se manejaban los textos. Así que siempre piensa en manejar índices.<br/>
 Todos queremos utilizar los mismos textos del servidor oficial, sobretodo para ahorrar tiempo y que quede bien traducido, entonces hay que crear una estructura que se sincronice con los índices del oficial.<br/>
-Si tienes un solo idioma, como si tienes varios, debes hacer esto:
+Si tienes un solo idioma, como si tienes varios, debes entender esto:
+Al iniciar el servidor, se cargará todas las quest, incluidos los archivos de extensión ```lua``` del locale (germany).<br/>
+El archivo que conecta con todos los textos es ```translate.lua```. Para adaptar este archivo a uno o varios idiomas deber borrar todo su contenido y agregar esto:
+```lua
+exportTestForCharset = "üöäÜÖÄß "
+gameforge = {}
 
+languages = {"es"} --tu lista de idiomas
+for i in languages do
+	gameforge[languages[i]] = {}
+	dofile(string.format("%s/translate/gameforge/translate_%s.lua", get_locale_base_path(), languages[i]))
+	dofile(string.format("%s/translate/new_texts/translate_%s.lua", get_locale_base_path(), languages[i]))
+end
+```
+En esta estructura creo dinámicamente un nuevo índice en la tabla ```gameforge``` por cada idioma. Cada índice es una nueva tabla. Todavía el contenido está vacío.<br/>
+```gameforge``` es la tabla que almacena todos los textos.<br/>
+<br/>
+También se carga dinámicamente cada 
