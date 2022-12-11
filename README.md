@@ -48,7 +48,7 @@ when GENERAL_STORE.click begin
 ```
 Estas variables se reemplazarán por sus correspondientes números y todas las quest se almacenarán en una carpeta llamada pre_qc.
 
-## 3. Compila las quest en pila
+## 3. Compila las quest en pila con pre_qc.py
 
 Al ejecutar main/admin_panel.sh existe la opción 777 para compilar quest. Debes revisar que el bloque 777 sea así:
 ```bash
@@ -76,3 +76,27 @@ WORKINGPATH_DFT="./pre_qc"
 ```
 
 Una de las ventajas de usar este pre_qc.py es que si obtienes un error al compilar, no pasará a la siguiente quest sino que se detendrá ahí y lo podremos visualizar para corregir.
+
+## 4. Prepara tu compilador qc
+
+qc es el nombre del binario generado desde el source server en game/src/quest. El lenguaje C++ llama al lua y el lua crea uno extendido que se le denominó quest, poniendo así sus propias reglas.<br/>
+Para compilar el qc, solo basta con ir a game/src/quest y ejecutar:
+```
+gmake clean
+gmake all -j5
+```
+Puedes revisar el Makefile para verificar sus requerimientos.<br/>
+De todas maneras no era necesario, ya que en el repo dejo un qc ya compilado con algo adicional.<br/>
+En el qc original no puedes hacer esto:
+```lua
+--otro archivo lua externo
+text_table = {
+	"text1" = {[1] = "subtext1", [2] = "subtext2", [3] = "subtext3"},
+	"text2" = {[1] = "subtext1", [2] = "subtext2", [3] = "subtext3"},
+}
+--quest
+when any_npc.chat.text_table["text1"][1] begin --no compila aquí
+	say(text_table["text1"][2])
+end
+
+```
