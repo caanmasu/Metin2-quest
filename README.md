@@ -38,6 +38,15 @@ Antes de ejecutar el qc, se ejecuta un pre_qc, que hace revisión de sintaxis y 
 El archivo se encuentra en quest/pre_qc.py. Es un archivo de Python en versión 2.7 o 3+. En el repo dejé la versión 3.
 Solo debes asegurarte de que el pre_qc.py sea el revisado por Marty Sama.
 Tu máquina debe tener instalado Python 3+.
+\n
+La utilidad especial del pre_qc.py es la definición del token, la que encuentras en algunas quest así:
+```
+define GENERAL_STORE 9003
+
+when GENERAL_STORE.click begin
+...
+```
+Estas variables se reemplazarán por sus correspondientes números y todas las quest se almacenarán en una carpeta llamada pre_qc.
 
 ## 3. Compila las quest en pila
 
