@@ -287,3 +287,53 @@ Este oldwoman equivale a 9006 porque en el archivo ```questnpc.txt``` lo declara
 ```
 9006 oldwoman
 ```
+
+## 14. Entiende el archivo questing.lua
+
+Este archivo es una librería externa, así como ```my_questlib.lua```, con la diferencia de que este archivo fue creado por el alemán Mijago.<br/>
+Esta librería es un poco antigua y algunas funciones están obsoletas como ```mysql_query```. Aunque hay funciones que son útiles como ```numtomoney```.<br/>
+Mi recomendación es sacar funciones que necesites y las pongas en tu lib.
+
+Por ejemplo, una función que podría ser útil sería:
+
+```lua
+--[[
+    @name   wartungsmodus
+    @author Mijago
+    @needs  mysql_query
+    @descr
+Versetzt alle Accounts (außer GM-Accounts) in einen "Wartungsmodus" und wieder zurück.
+--]]
+function wartungsmodus(v)
+    if v == 1 or v == true then
+        mysql_query("UPDATE account.account SET account.status = 'SHUTDOWN' WHERE status = 'OK' and account.login NOT IN (SELECT mAccount FROM common.gmlist);")
+    else
+        mysql_query("UPDATE account.account SET account.status = 'OK' WHERE status = 'SHUTDOWN' and account.login NOT IN (SELECT mAccount FROM common.gmlist);")
+    end
+end
+```
+Aunque yo le cambiaría un poco el nombre de las variables, así:
+
+```lua
+--[[
+    @name   wartungsmodus
+    @author Mijago
+    @needs  mysql_query
+    @descr
+Pone todas las cuentas (excepto las cuentas de GM) en un "modo de mantenimiento" y viceversa.
+--]]
+function set_account_maintenance(v)
+    if v == 1 or v == true then
+        mysql_query("UPDATE account.account SET account.status = 'SHUTDOWN' WHERE status = 'OK' and account.login NOT IN (SELECT mAccount FROM common.gmlist);")
+    else
+        mysql_query("UPDATE account.account SET account.status = 'OK' WHERE status = 'SHUTDOWN' and account.login NOT IN (SELECT mAccount FROM common.gmlist);")
+    end
+end
+```
+Se usa así:
+```lua
+--para poner en mantenimiento:
+set_account_maintenance(true)
+--para dejar todo como estaba:
+set_account_maintenance(false)
+```
