@@ -194,7 +194,83 @@ end
 ```
 En ```"es"``` debes poner tu idioma si no tienes multilenguaje.
 
-## 11. Crea una carpeta aparte para tus quest
+## 11. Utiliza locale_quest
+
+Esta función ya existe en el sistema de multilenguaje de Owsap más moderno. Maneja índices de textos. Aunque así tengas o no multilenguaje, usarás esta función por conveniencia, que ya la creamos anteriormente.
+
+Este es un ejemplo de quest donde utilizo locale_quest. Una vez puesta esta quest, debería funcionar. Si no se instaló bien la estructura de los textos, debería aparecer ```Text error: index```. <br/>
+
+Debes compilar con 777.
+
+```lua
+define ITEM_CHANGE_NAME 71055
+
+quest change_name begin
+	state start begin
+		when ITEM_CHANGE_NAME.use begin
+			if pc.is_married() then
+				syschat(locale_quest(20500))
+				return
+			end
+
+			if pc.is_polymorphed() then
+				syschat(locale_quest(20501))
+				return
+			end
+
+			if pc.has_guild() then
+				syschat(locale_quest(20502))
+				return
+			end
+
+			if party.is_party() then
+				syschat(locale_quest(20503))
+				return
+			end
+			say_title(item_name(item.vnum))
+			say()
+			say(locale_quest(20504)) 
+
+			local new_name = input()
+			
+			if string.len(new_name) > 13 or string.len(new_name) < 3 then
+				syschat(locale_quest(20505))
+				return
+			end
+			
+			if string.find(new_name, " ") then
+				syschat(locale_quest(20506))
+				return
+			end
+			
+			local k = pc.change_name(new_name)
+			if k == 0 then
+				syschat(locale_quest(20507))
+			elseif k == 1 then
+				syschat(locale_quest(20508))
+			elseif k == 2 then
+				syschat(locale_quest(20509))
+			elseif k == 3 then
+				syschat(locale_quest(20510))
+			elseif k == 4 then
+				if pc.count_item(item.vnum) > 0 then
+					syschat(locale_quest(20511))
+					pc.remove_item(ITEM_CHANGE_NAME)
+					pc.setqf("next_time", get_time() + 60*60*24*3)
+				end
+			elseif k == 5 then
+				syschat(locale_quest(20512))
+			elseif k == 6 then
+				syschat(locale_quest(20513))
+			else
+				syschat(locale_quest(20514))
+			end
+		end
+	end
+end
+```
+
+## 12. Crea una carpeta aparte para tus quest
 
 Por lo general guardan las quest en la misma carpeta ```quest``` junto con ```object```, ```pre_qc``` y varios archivos en la misma carpeta. Recomiendo crear una carpeta aparte. A veces la llaman ```source``` pero recomendaré el nombre ```my_quests```.<br/>
 En ```my_quests``` debes crear más carpetas según las categorías que tus quests. Esto lo irás haciendo mientras las vas agregando. Generalmente se crean las categorías ```item```, ```npc```, ```basic```, ```system```, ```dungeon```, etc.
