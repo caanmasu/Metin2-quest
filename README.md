@@ -96,7 +96,7 @@ Al compilar las quest, las carpetas ```object``` y ```pre_qc``` se eliminarán y
 ## 4. Prepara tu compilador qc
 
 ```qc``` es el nombre del binario generado desde el source server en ```game/src/quest```. El lenguaje C++ llama al lua y el lua crea uno extendido que se le denominó quest, poniendo así su propia estructura y sintaxis.<br/>
-Para compilar el qc, solo basta con ir a game/src/quest y ejecutar:
+Para compilar el qc, solo basta con ir a ```game/src/quest``` y ejecutar:
 ```
 gmake clean
 gmake all -j5
