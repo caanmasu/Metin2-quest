@@ -275,3 +275,15 @@ end
 
 Por lo general guardan las quest en la misma carpeta ```quest``` junto con ```object```, ```pre_qc``` y varios archivos. Recomiendo crear una carpeta aparte. A veces la llaman ```source``` pero recomendaré el nombre ```my_quests```.<br/>
 En ```my_quests``` debes crear más carpetas según las categorías que tus quests. Esto lo irás haciendo mientras las vas agregando. Generalmente se crean las categorías ```item```, ```npc```, ```basic```, ```system```, ```dungeon```, etc.
+
+## 13. Entiende el questnpc.txt
+
+En la carpeta ```quest``` hay un archivo llamado ```questnpc.txt``` que sirve para asignar variables a vnums de NPCs.<br/>
+En la quest de la anciana, vas a ver algo así:
+```lua
+	when oldwoman.chat... begin
+```
+Este oldwoman equivale a 9006 porque en el archivo ```questnpc.txt``` lo declara:
+```
+9006 oldwoman
+```
