@@ -146,9 +146,9 @@ También se carga dinámicamente cada archivo de translate, es decir, los que es
 Una carpeta llamada ```gameforge``` para todas las variables de texto del juego, las originales. Y luego otra carpeta con nuestros propios textos llamada ```new_texts```.<br/>
 Ahora haremos uso del convertidor de variables de cliente del oficial a servidor, autoría de Owsap.<br/>
 https://metin2.dev/topic/22862-localestring-localequest-builder/ <br/>
-Se debe ejecutar el programa para el ```locale_quest.txt``` (en el repo hay uno más actualizado) y obtener ```locale_xx.lua``` de los idiomas que necesites.<br/>
+Se debe ejecutar el programa para el ```locale_quest.txt``` (en el repo está el más actualizado hasta el momento) y obtener ```locale_xx.lua``` de los idiomas que necesites.<br/>
 Estos archivos ```lua``` debes ponerlos en la carpeta ```gameforge``` y esto es importante:
-#### borra la primera línea (```gameforge[lang] = {}```) de cada archivo.<br/>
+#### borra la primera línea (```gameforge[your_lang] = {}```) de cada archivo.<br/>
 <br/>
 Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y poner tus textos. Si no lo entiendes, no importa; en el repo está clara la estructura.
 
