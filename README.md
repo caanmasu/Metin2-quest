@@ -281,7 +281,7 @@ En ```my_quests``` debes crear más carpetas según las categorías que tus ques
 En la carpeta ```quest``` hay un archivo llamado ```questnpc.txt``` que sirve para asignar variables a vnums de NPCs.<br/>
 En la quest de la anciana, vas a ver algo así:
 ```lua
-	when oldwoman.chat... begin
+when oldwoman.chat... begin
 ```
 Este oldwoman equivale a 9006 porque en el archivo ```questnpc.txt``` lo declara:
 ```
