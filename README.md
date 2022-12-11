@@ -76,7 +76,7 @@ WORKINGPATH_DFT="./pre_qc"
 ```
 
 Una de las ventajas de usar este pre_qc.py es que si obtienes un error al compilar, no pasará a la siguiente quest sino que se detendrá ahí y lo podremos visualizar para corregir.<br/>
-### Nota: una quest es compilada bien cuando se compila el último bloque when o function. Aún así no hay garantía, porque hay un bug donde si pones un caracter especial en el último caracter de un say (o algún componente gráfico quest, como select), tomará como compilado ese bloque pero no compiló la quest. La solución es, si necesariamente quieres una tilde (posible caracter), entonces adiciona un espacio.<br/>
+#### Nota: una quest es compilada bien cuando se compila el último bloque when o function. Aún así no hay garantía, porque hay un bug donde si pones un caracter especial en el último caracter de un say (o algún componente gráfico quest, como select), tomará como compilado ese bloque pero no compiló la quest. La solución es, si necesariamente quieres una tilde (posible caracter), entonces adiciona un espacio.<br/>
 Esto está mal:
 ```lua
 -- on any file lua
