@@ -154,4 +154,10 @@ Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y poner tus 
 
 ## 7. Prepara tu questcategory.txt
 
-Si tienes el sistema de questcategory o questrenewal debes entender que el archivo ```questcategory.txt``` solo funciona con saltos de línea lf (o generado en Unix). Para comprobarlo, debes abrirlo con Notepad++ y en la parte inferior derecha, si lo tienes en ```Windows(CR LF)``` debes cambiarlo a ```Unix (LF)```
+Si tienes el sistema de questcategory o questrenewal debes entender que el archivo ```questcategory.txt``` solo funciona con saltos de línea lf (o generado en Unix). Para comprobarlo, debes abrirlo con Notepad++ y en la parte inferior derecha, si lo tienes en ```Windows(CR LF)``` debes cambiarlo a ```Unix (LF)```.
+
+## 8. Deja el nombre de la quest igual que el de los archivos
+
+Esto no es obligatorio pero es mejor manejarlo así. Si tu quest empieza por ```quest test begin```, debería llamarse ```test.quest```.<br/>
+Lo normal es que si el archivo tiene la estructura ```quest ... begin```, tenga la extensión ```quest```.<br/>
+En cambio, si no tiene estructura quest y solo usas el archivo para librería o almacenar variables, deja la extensión en ```lua```
