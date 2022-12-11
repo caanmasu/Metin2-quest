@@ -150,8 +150,8 @@ Se debe ejecutar el programa para el ```locale_quest.txt``` (en el repo está el
 Estos archivos ```lua``` debes ponerlos en la carpeta ```gameforge``` y esto es importante:
 #### borra la primera línea (```gameforge[your_lang] = {}```) de cada archivo.<br/>
 <br/>
-Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y poner tus textos. Si no lo entiendes, no importa; en el repo está clara la estructura.
-
+Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y poner tus textos. Si no lo entiendes, no importa; en el repo está clara la estructura.<br/>
+Van a aparecer varios errores al iniciar el servidor si pusiste ciertos idiomas. Esto es porque hay caracteres inválidos en los translate, solo se debe corregir uno por uno.
 ## 7. Prepara tu questcategory.txt
 
 Si tienes el sistema de questcategory o questrenewal debes entender que el archivo ```questcategory.txt``` solo funciona con saltos de línea lf (o generado en Unix). Para comprobarlo, debes abrirlo con Notepad++ y en la parte inferior derecha, si lo tienes en ```Windows(CR LF)``` debes cambiarlo a ```Unix (LF)```.
