@@ -98,5 +98,8 @@ text_table = {
 when any_npc.chat.text_table["text1"][1] begin --no compila aquí
 	say(text_table["text1"][2])
 end
-
 ```
+En los when donde se ponen textos no se pueden poner tablas con más de una anidación, quiero decir, puedes llamar a ```text_table["text1"]``` (si fuera un texto) pero no a una posición más allá como ```text_table["text1"][1]```. Y si te ha sonado algo parecido, esto se usa en el multilenguaje.<br/>
+<br/>
+Una vez puesto el qc del repo ya funcionará como debe ser.
+## 5. 
