@@ -160,7 +160,7 @@ Si tienes el sistema de questcategory o questrenewal debes entender que el archi
 
 Esto no es obligatorio pero es mejor manejarlo así. Si tu quest empieza por ```quest test begin```, debería llamarse ```test.quest```.<br/>
 Lo normal es que si el archivo tiene la estructura ```quest ... begin```, tenga la extensión ```quest```.<br/>
-En cambio, si no tiene estructura quest y solo usas el archivo para librería o almacenar variables, deja la extensión en ```lua```
+En cambio, si no tiene estructura quest y solo usas el archivo para librería o almacenar variables, deja la extensión ```lua```.
 
 ## 9. Pon la codificación correcta
 
