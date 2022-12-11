@@ -11,6 +11,8 @@ En caso de que tengas otro tipo de base solo debes adaptarlo.
 
 ## 1. Crea un acceso directo a tu carpeta quest
 
+Digita estos comandos en tu PuTTY:
+
 ```
 cd /
 ln -s /usr/home/svfiles/main/srv1/share/locale/germany/quest /
@@ -26,3 +28,17 @@ Tan solo debes escribir:
 ```
 cd /quest
 ```
+
+Verifica que en tu raíz se haya creado un acceso directo a la carpeta.
+
+## 2. Deja listo tu pre_qc.py
+
+Para compilar las quest hay dos archivos, el qc, que es el que compila las quest del lado del servidor.
+Antes de ejecutar el qc, se ejecuta un pre_qc, que hace revisión de sintaxis y utilidades.
+El archivo se encuentra en quest/pre_qc.py. Es un archivo de Python en versión 2.7 o 3+. En el repo dejé la versión 3.
+Solo debes asegurarte de que el pre_qc.py sea el revisado por Marty Sama.
+Tu máquina debe tener instalado Python 3+.
+
+## 3. Compila las quest en pila
+
+
