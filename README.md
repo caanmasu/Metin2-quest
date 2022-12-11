@@ -150,6 +150,6 @@ Se debe ejecutar el programa para el ```locale_quest.txt``` (en el repo hay uno 
 Estos archivos ```lua``` debes ponerlos en la carpeta ```gameforge``` y esto es importante:
 #### borra la primera línea (```gameforge[lang] = {}```) de cada archivo.<br/>
 <br/>
-Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y dejarlos vacíos.
+Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y poner tus textos. Si no lo entiendes, no importa; en el repo está clara la estructura.
 
 
