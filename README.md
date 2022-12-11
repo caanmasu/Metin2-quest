@@ -1,3 +1,1 @@
-```
-#Metin2-quest
-```
+# Metin2-quest
