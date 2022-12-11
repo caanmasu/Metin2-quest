@@ -272,5 +272,5 @@ end
 
 ## 12. Crea una carpeta aparte para tus quest
 
-Por lo general guardan las quest en la misma carpeta ```quest``` junto con ```object```, ```pre_qc``` y varios archivos en la misma carpeta. Recomiendo crear una carpeta aparte. A veces la llaman ```source``` pero recomendaré el nombre ```my_quests```.<br/>
+Por lo general guardan las quest en la misma carpeta ```quest``` junto con ```object```, ```pre_qc``` y varios archivos. Recomiendo crear una carpeta aparte. A veces la llaman ```source``` pero recomendaré el nombre ```my_quests```.<br/>
 En ```my_quests``` debes crear más carpetas según las categorías que tus quests. Esto lo irás haciendo mientras las vas agregando. Generalmente se crean las categorías ```item```, ```npc```, ```basic```, ```system```, ```dungeon```, etc.
