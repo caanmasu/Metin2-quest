@@ -38,8 +38,8 @@ Antes de ejecutar el qc, se ejecuta un pre_qc, que hace revisión de sintaxis y 
 El archivo se encuentra en quest/pre_qc.py. Es un archivo de Python en versión 2.7 o 3+. En el repo dejé la versión 3.<br/>
 Solo debes asegurarte de que el pre_qc.py sea el revisado por Marty Sama.<br/>
 Tu máquina debe tener instalado Python 3+.<br/>
-Una utilidad son los comentarios, puedes omitir la compilación de una quest anteponiendo #.<br/>
-La utilidad especial del pre_qc.py es la definición del token, la que encuentras en algunas quest así:
+Una utilidad son los comentarios, puedes omitir la compilación de una quest anteponiendo # en el ```quest_list```.<br/>
+La utilidad especial del ```pre_qc.py``` es la definición del token, la que encuentras en algunas quest así:
 ```
 define GENERAL_STORE 9003
 
@@ -50,7 +50,7 @@ Estas variables se reemplazarán por sus correspondientes números y todas las q
 
 ## 3. Compila las quest en pila con pre_qc.py
 
-Al ejecutar main/admin_panel.sh existe la opción 777 para compilar quest. Debes revisar que el bloque 777 sea así:
+Al ejecutar ```main/admin_panel.sh``` existe la opción 777 para compilar quest. Debes revisar que el bloque 777 sea así:
 ```bash
 777|quest)
 	cd $v_mt2f/$v_foldername/share/locale/$v_localename/quest
@@ -69,13 +69,13 @@ En caso de que no utilices Marty Sama, puedes hacer estos comandos:
 	cecho "quest completed"
 ```
 
-En el código del pre_qc.py se encuentra el archivo que almacena las quest, que es el questlist.
+En el código del pre_qc.py se encuentra el archivo que almacena las quest, que es el ```quest_list```.
 ```py
 QUESTLIST_PATH_DFT="./quest_list"
 WORKINGPATH_DFT="./pre_qc"
 ```
 
-Una de las ventajas de usar este pre_qc.py es que si obtienes un error al compilar, no pasará a la siguiente quest sino que se detendrá ahí y lo podremos visualizar para corregir.<br/>
+Una de las ventajas de usar este ```pre_qc.py``` es que si obtienes un error al compilar, no pasará a la siguiente quest sino que se detendrá ahí y lo podremos visualizar para corregir.<br/>
 #### Nota: una quest es compilada bien cuando se compila el último bloque when o function. Aún así no hay garantía, porque hay un bug donde si pones un caracter especial en el último caracter de un say (o algún componente gráfico quest, como select), tomará como compilado ese bloque pero no compiló la quest. La solución es, si necesariamente quieres una tilde (posible caracter), entonces adiciona un espacio.<br/>
 ```lua
 -- on any file lua
@@ -94,7 +94,7 @@ Los caracteres hasta donde tengo conocido, son todos los que lleven tilde o la c
 
 ## 4. Prepara tu compilador qc
 
-qc es el nombre del binario generado desde el source server en game/src/quest. El lenguaje C++ llama al lua y el lua crea uno extendido que se le denominó quest, poniendo así sus propias reglas.<br/>
+```qc``` es el nombre del binario generado desde el source server en ```game/src/quest```. El lenguaje C++ llama al lua y el lua crea uno extendido que se le denominó quest, poniendo así su propia estructura y sintaxis.<br/>
 Para compilar el qc, solo basta con ir a game/src/quest y ejecutar:
 ```
 gmake clean
