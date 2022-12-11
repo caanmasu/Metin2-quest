@@ -50,4 +50,13 @@ Estas variables se reemplazarán por sus correspondientes números y todas las q
 
 ## 3. Compila las quest en pila
 
-
+Al ejecutar main/admin_panel.sh existe la opción 777 para compilar quest. Debes revisar que los comandos sean:
+```bash
+777|quest)
+	cd $v_mt2f/$v_foldername/share/locale/$v_localename/quest
+	chmod u+x qc
+	$v_bin pre_qc.py -ac
+	cd $v_base
+	cecho "quest completed"
+;;
+```
