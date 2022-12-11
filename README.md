@@ -338,6 +338,8 @@ set_account_maintenance(true)
 set_account_maintenance(false)
 ```
 
+(Revisa si en tu servidor usan prefijo srv1_ antes del nombre de la tabla para que lo cambies)
+
 ## 15. Entendiendo questlib_extra.lua
 
 Puedes agregar este contenido en questlib.lua, sin embargo, siempre recomiendo recoger lo que vas a utilizar.<br/>
