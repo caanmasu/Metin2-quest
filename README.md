@@ -152,4 +152,6 @@ Estos archivos ```lua``` debes ponerlos en la carpeta ```gameforge``` y esto es 
 <br/>
 Ahora debes crear los mismos archivos en la carpeta ```new_texts``` y poner tus textos. Si no lo entiendes, no importa; en el repo está clara la estructura.
 
+## 7. Prepara tu questcategory.txt
 
+Si tienes el sistema de questcategory o questrenewal debes entender que el archivo ```questcategory.txt``` solo funciona con saltos de línea lf (o generado en Unix). Para comprobarlo, debes abrirlo con Notepad++ y en la parte inferior derecha, si lo tienes en ```Windows(CR LF)``` debes cambiarlo a ```Unix (LF)```
