@@ -161,3 +161,10 @@ Si tienes el sistema de questcategory o questrenewal debes entender que el archi
 Esto no es obligatorio pero es mejor manejarlo así. Si tu quest empieza por ```quest test begin```, debería llamarse ```test.quest```.<br/>
 Lo normal es que si el archivo tiene la estructura ```quest ... begin```, tenga la extensión ```quest```.<br/>
 En cambio, si no tiene estructura quest y solo usas el archivo para librería o almacenar variables, deja la extensión en ```lua```
+
+## 9. Pon la codificación correcta
+
+Si en el juego te aparecen caracteres especiales en tus textos, tal como en vez de mostrar tildes muestra otros caracteres, entonces la codificación no es la correcta.<br/>
+Debes abrir el archivo con Notepad++, ir a la barra de herramientas, opción ```Codificación``` y debe estar elegido ```Codificar en ANSI```.<br/>
+Si tu codificación está seleccionada en ```Juego de caracteres/Coreano/EUC-KR``` no se puede convertir, fallará la conversión. En ese caso debes copiar todo el contenido del archivo, crear un nuevo archivo en formato ANSI y pegar el contenido.
+
