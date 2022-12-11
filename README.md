@@ -170,7 +170,7 @@ Si tu codificación está seleccionada en ```Juego de caracteres/Coreano/EUC-KR`
 
 ## 10. Separa questlib.lua de tu propia lib
 
-El archivo ```questlib.lua``` es el principal archivo de librerías de para quest. Allí se almacenan variables y funciones globales que son útiles para usar luego en otras partes.<br/>
+El archivo ```questlib.lua``` es el principal archivo de librerías de quest. Allí se almacenan variables y funciones globales que son útiles para usar luego en otras partes.<br/>
 Recomiendo crear otro archivo, puede ser llamado ```my_questlib.lua``` donde almacenes tus nuevas variables y funciones. Es mejor tener un archivo externo de lib donde lo puedas portar luego a otras creaciones, incluso de esta manera es más organizado.
 
 Para obtener el texto en multilenguaje o no, recuerda la parte del translate, debe ser la siguiente:
