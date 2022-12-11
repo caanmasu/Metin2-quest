@@ -255,7 +255,7 @@ quest change_name begin
 			elseif k == 4 then
 				if pc.count_item(item.vnum) > 0 then
 					syschat(locale_quest(20511))
-					pc.remove_item(ITEM_CHANGE_NAME)
+					pc.remove_item(item.vnum)
 					pc.setqf("next_time", get_time() + 60*60*24*3)
 				end
 			elseif k == 5 then
