@@ -168,3 +168,28 @@ Si en el juego te aparecen caracteres especiales en tus textos, tal como en vez 
 Debes abrir el archivo con Notepad++, ir a la barra de herramientas, opción ```Codificación``` y debe estar elegido ```Codificar en ANSI```.<br/>
 Si tu codificación está seleccionada en ```Juego de caracteres/Coreano/EUC-KR``` no se puede convertir, fallará la conversión. En ese caso debes copiar todo el contenido del archivo, crear un nuevo archivo en formato ANSI y pegar el contenido.
 
+## 10. Separa questlib.lua de tu propia lib
+
+El archivo ```questlib.lua``` es el principal archivo de librerías de para quest. Allí se almacenan variables y funciones globales que son útiles para usar luego en otras partes.<br/>
+Recomiendo crear otro archivo, puede ser llamado ```my_questlib.lua``` donde almacenes tus nuevas variables y funciones. Es mejor tener un archivo externo de lib donde lo puedas portar luego a otras creaciones, incluso de esta manera es más organizado.
+
+Para obtener el texto en multilenguaje o no, recuerda la parte del translate, debe ser la siguiente:
+
+```lua
+--my_questlib.lua
+ENABLE_MULTILANGUAGE_SYSTEM = true
+
+function locale_quest(idx)
+	local text = ""
+	if ENABLE_MULTILANGUAGE_SYSTEM:
+		text = gameforge[pc.get_language()][idx]
+	else
+		text = gameforge["es"][idx]
+	end
+	if text == nil or text == "" then
+		text = string.format("Text error: %s", idx)
+	end
+	return text
+end
+```
+En ```"es"``` debes poner tu idioma si no tienes multilenguaje.
