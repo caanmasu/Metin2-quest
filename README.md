@@ -337,3 +337,24 @@ set_account_maintenance(true)
 --para dejar todo como estaba:
 set_account_maintenance(false)
 ```
+
+## 15. Entendiendo questlib_extra.lua
+
+Puedes agregar este contenido en questlib.lua, sin embargo, siempre recomiendo recoger lo que vas a utilizar.<br/>
+Algunas variables fueron sacadas de listas enumeradas ```enum``` del source server. Siempre hay que revisar si corresponden los números, si están completas las variables o hacen falta.
+
+## 16. Completa la tabla apply en questlib.lua
+
+Es normal agregar nuevos bonus al servidor, como fuerza contra metines, fuerza contra jefes, sungma, etc. Cada vez que agregues un bonus, debes añadirlo en la tabla ```apply``` del archivo ```questlib.lua```.<br/>
+Los bonus se encuentran en ```game/src/constants.cpp```.<br/>
+Busca:
+```c++
+const TApplyInfo aApplyInfo[MAX_APPLY_NUM] =
+```
+Dentro busca el bonus, supongamos que es Poder de tierra.
+```
+	{ POINT_ENCHANT_EARTH,			},	// APPLY_ENCHANT_EARTH,103
+```
+Debes agregar ```ENCHANT_EARTH``` (la parte derecha sin el APPLY_).<br/>
+<br/>
+La tabla ```apply``` se usa sobretodo en las misiones del biólogo cuando se va a dar la recompensa del bonus. Sin embargo, las misiones del biólogo fueron reemplazadas por sistemas. La utilidad que le hago a esta tabla es para un dopador.
