@@ -38,6 +38,7 @@ Antes de ejecutar el qc, se ejecuta un pre_qc, que hace revisión de sintaxis y 
 El archivo se encuentra en quest/pre_qc.py. Es un archivo de Python en versión 2.7 o 3+. En el repo dejé la versión 3.<br/>
 Solo debes asegurarte de que el pre_qc.py sea el revisado por Marty Sama.<br/>
 Tu máquina debe tener instalado Python 3+.<br/>
+Una utilidad son los comentarios, puedes omitir la compilación de una quest anteponiendo #.<br/>
 La utilidad especial del pre_qc.py es la definición del token, la que encuentras en algunas quest así:
 ```
 define GENERAL_STORE 9003
@@ -62,5 +63,16 @@ Al ejecutar main/admin_panel.sh existe la opción 777 para compilar quest. Debes
 En caso de que no utilices Marty Sama, puedes hacer estos comandos:
 ```bash
 	cd /quest
-	chmod u+x qc
+	chmod u+x qc #da permisos de ejecución al qc en caso de que nos los tenga
+	python3 pre_qc.py -ac #ejecuta el pre_qc.py con los parámetros a(all) y c(compile).
+	cd / #si la ruta anterior está guardada en una variable, mucho mejor
+	cecho "quest completed"
 ```
+
+En el código del pre_qc.py se encuentra el archivo que almacena las quest, que es el questlist.
+```py
+QUESTLIST_PATH_DFT="./quest_list"
+WORKINGPATH_DFT="./pre_qc"
+```
+
+Una de las ventajas de usar este pre_qc.py es que si obtienes un error al compilar, no pasará a la siguiente quest sino que se detendrá ahí y lo podremos visualizar para corregir.
