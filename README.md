@@ -359,4 +359,4 @@ Dentro busca el bonus, supongamos que es Poder de tierra.
 ```
 Debes agregar ```ENCHANT_EARTH``` (la parte derecha sin el APPLY_).<br/>
 <br/>
-La tabla ```apply``` se usa sobretodo en las misiones del biólogo cuando se va a dar la recompensa del bonus. Sin embargo, las misiones del biólogo fueron reemplazadas por sistemas. La utilidad que le hago a esta tabla es para un dopador.
+La tabla ```apply``` se usa sobretodo en las misiones del biólogo cuando se va a dar la recompensa del bonus. Sin embargo, las misiones del biólogo fueron reemplazadas por sistemas desde C++. La utilidad que le hago a esta tabla es para un dopador.
