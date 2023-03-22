@@ -99,7 +99,7 @@ Al compilar las quest, las carpetas ```object``` y ```pre_qc``` se eliminarán y
 Para compilar el qc, solo basta con ir a ```game/src/quest``` y ejecutar:
 ```
 gmake clean
-gmake all -j5
+gmake -j5
 ```
 Puedes revisar el Makefile para verificar sus requerimientos.<br/>
 De todas maneras no era necesario, ya que en el repo dejo un qc ya compilado con algo adicional.<br/>
